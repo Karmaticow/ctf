@@ -548,6 +548,26 @@ header .site-title:hover {
   );
   border-radius: 10px;
 }
+.page .content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  background: rgba(255, 255, 255, 0.01);
+}
+.page .content table th,
+.page .content table td {
+  border: 1px solid rgba(91, 214, 255, 0.25);
+  padding: 0.75rem;
+  text-align: left;
+}
+.page .content table th {
+  background: rgba(91, 214, 255, 0.12);
+  color: var(--white-1);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.ctf-table tbody tr:nth-child(every odd?) need not. add highlight.
+.ctf-table tbody tr:nth-child(odd) { background: }
 
 footer {
   margin-top: 2rem;
@@ -638,4 +658,29 @@ footer p {
   .articles .article .article-title a {
     font-size: 1.1rem;
   }
+}
+.ctf-table tbody tr:nth-child(odd) {
+  background: rgba(91, 214, 255, 0.04);
+}
+.ctf-table tbody tr:hover {
+  background: rgba(59, 247, 166, 0.08);
+  transition: background 0.2s ease-in-out;
+}
+.page .content table th:nth-child(1) {
+  width: 40%;
+}
+.page .content table th:nth-child(2) {
+  width: 20%;
+}
+.page .content table th:nth-child(3) {
+  width: 25%;
+}
+.page .content table td:nth-child(1) {
+  width: 40%;
+}
+.page .content table td:nth-child(2) {
+  width: 20%;
+}
+.page .content table td:nth-child(3) {
+  width: 25%;
 }
