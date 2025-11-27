@@ -34,6 +34,11 @@ I'm a high school junior intersted in cybersecurity and CTFs. I'm the captain of
   </thead>
   <tbody>
     <tr>
+      <td>PatriotCTF 2025</td>
+      <td>tjcsc</td>
+      <td>54th</td>
+    </tr>
+    <tr>
       <td>GlacierCTF 2025</td>
       <td>0xf1sh</td>
       <td>37th</td>
