@@ -1,10 +1,11 @@
 ---
 layout: post
 title: "Where’s Legally Distinct Waldo Three"
-categories: [writeups, osint, patriotctf2025]
-date: 2025-11-27
+categories: [osint, patriotctf2025]
+date: 2025-11-27 11:00:00 -0500
 writeup: true
 permalink: /write-ups/wheres-legally-distinct-waldo-three/
+order: 3
 ---
 
 **PatriotCTF 2025**

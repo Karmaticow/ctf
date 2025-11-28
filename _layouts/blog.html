@@ -15,12 +15,12 @@
       {% unless list_source == "none" %}
         {% if list_source == "writeups" %}
         {% assign articles = site.pages | where: "writeup", true %}
+        {% assign articles = articles | sort: "order" | reverse %}
         {% elsif list_source == "blog_posts" %}
-        {% assign articles = site.pages | where: "blog_post", true %}
+        {% assign articles = site.pages | where: "blog_post", true | sort: "date" | reverse %}
         {% else %}
-        {% assign articles = site.posts %}
+        {% assign articles = site.posts | sort: "date" | reverse %}
         {% endif %}
-        {% assign articles = articles | sort: "date" | reverse %}
         <section class="articles" id="blog">
           {% if articles == empty %}
           {% unless page.hide_placeholder %}
@@ -34,14 +34,23 @@
           {% assign placeholder_message = "Posts will appear here once published." %}
           {% endif %}
           {% endif %}
-          <article class="article">
+          <article
+            class="article"
+            data-tags="{{post.categories | join: ',' | downcase}}"
+            data-date="{{post.date | date_to_xmlschema}}"
+            data-order="{{post.order | default: 0}}"
+          >
             <h2 class="article-title">Coming soon</h2>
             <p class="article-desc">{{placeholder_message}}</p>
           </article>
           {% endunless %}
           {% else %}
           {% for post in articles %}
-          <article class="article">
+          <article
+            class="article"
+            data-tags="{{post.categories | join: ',' | downcase}}"
+            data-date="{{post.date | date_to_xmlschema}}"
+          >
             <h2 class="article-title">
               <a href="{{site.baseurl}}{{post.url}}"> {{post.title}} </a>
             </h2>

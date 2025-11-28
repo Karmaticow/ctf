@@ -15,7 +15,7 @@ Welcome to my website! Here's what I have to offer:
 - **Blog:** quick notes, experiments, and thoughts between events.
 - **Links:** Discord is best if you want to get in touch with me! Please let me know you found me through here.
 
-{% assign writeups = site.pages | where: "writeup", true | sort: "date" | reverse %}
+{% assign writeups = site.pages | where: "writeup", true | sort: "order" | reverse %}
 {% assign latest_writeup = writeups | first %}
 {% assign blog_posts = site.pages | where: "blog_post", true | sort: "date" | reverse %}
 {% assign latest_blog = blog_posts | first %}
