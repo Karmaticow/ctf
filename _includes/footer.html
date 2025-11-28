@@ -1,6 +1,11 @@
 <footer>
   <p>&copy; {{ 'now' | date: "%Y" }} | {{site.title}}</p>
-  <p id="unique-views" class="view-counter"></p>
+  <div class="view-counter">
+    <span>Unique visitors:</span>
+    <img
+      src="https://count.getloli.com/@snowbird91_ctf_site?theme=morden-num&padding=8"
+      alt="unique visitors counter"
+    />
+  </div>
 </footer>
 <script src="{{site.baseurl}}/assets/js/mode.js" defer></script>
-<script src="{{site.baseurl}}/assets/js/views.js" defer></script>
