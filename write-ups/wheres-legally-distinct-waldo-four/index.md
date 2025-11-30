@@ -16,7 +16,7 @@ I participated with my club team tjcsc in PatriotCTF 2025, and we got 54th overa
 
 **Category:** OSINT
 
-**Flag:** pctf{krug_hall}
+**Flag:** ``pctf{krug_hall}``
 
 **Note:** I got first blood on the challenge 5 minutes into the CTF! Cool stuff.
 
@@ -40,6 +40,6 @@ The features match pretty well. So, let’s go back and see what building this i
 
 ![Success confirmation](./waldo4-005.png)
 
-Krug Hall? Let’s try that… Done! pctf{krug_hall} First wave OSINT full cleared. That was pretty easy!
+Krug Hall? Let’s try that… Done! ``pctf{krug_hall}``. First wave OSINT full cleared. That was pretty easy!
 
 I full cleared the first wave OSINT in about 51 minutes after the competition started. They were very light and fun challenges.
