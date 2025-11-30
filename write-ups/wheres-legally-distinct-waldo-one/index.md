@@ -16,7 +16,7 @@ I participated with my club team tjcsc in PatriotCTF 2025, and we got 54th overa
 
 **Category:** OSINT
 
-**Flag:** pctf{horizon_hall}
+**Flag:** ``pctf{horizon_hall}``
 
 So, here is the provided image:
 
@@ -56,4 +56,4 @@ Let’s see what building matches this POV:
 
 Horizon Hall? Let’s try that…
 
-Boom! pctf{horizon_hall} was the flag. Pretty simple!
+Boom! ``pctf{horizon_hall}`` was the flag. Pretty simple!

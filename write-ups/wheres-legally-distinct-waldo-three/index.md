@@ -16,7 +16,7 @@ I participated with my club team tjcsc in PatriotCTF 2025, and we got 54th overa
 
 **Category:** OSINT
 
-**Flag:** pctf{center_for_the_arts_concert_hall}
+**Flag:** ``pctf{center_for_the_arts_concert_hall}``
 
 So, here is the provided image:
 
@@ -42,4 +42,4 @@ Center for the Arts eh? Let’s try that… Oops! Somehow pctf{center_for_the_ar
 
 Concert Hall? Let’s try that.
 
-Easy dub! pctf{center_for_the_arts_concert_hall} worked! Unfortunate that I wasted an attempt…
+Easy dub! ``pctf{center_for_the_arts_concert_hall}`` worked! Unfortunate that I wasted an attempt…

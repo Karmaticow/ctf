@@ -16,7 +16,7 @@ I participated with my club team tjcsc in PatriotCTF 2025, and we got 54th overa
 
 **Category:** OSINT
 
-**Flag:** pctf{thompson_hall}
+**Flag:** ``pctf{thompson_hall}``
 
 So, here is the provided image:
 
@@ -46,4 +46,4 @@ Looks great! Now, let’s find the building the image was taken from based on th
 
 Thompson Hall? Let’s try that…
 
-Great! The flag was pctf{thompson_hall}. Another easy challenge done!
+Great! The flag was ``pctf{thompson_hall}``. Another easy challenge done!
