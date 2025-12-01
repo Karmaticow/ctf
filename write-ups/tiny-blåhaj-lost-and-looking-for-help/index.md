@@ -4,7 +4,7 @@ title: "Tiny Blåhaj: lost and looking for help"
 categories: [osint, haix-la-chapelle2025]
 date: 2025-12-01 13:00:00 -0500
 writeup: true
-permalink: /write-ups/cool-lampppost/
+permalink: /write-ups/tiny-blåhaj-lost-and-looking-for-help/
 order: 8
 ---
 
