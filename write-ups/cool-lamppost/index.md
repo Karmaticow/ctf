@@ -4,7 +4,7 @@ title: "Cool Lamppost"
 categories: [osint, haix-la-chapelle2025]
 date: 2025-12-01 10:00:00 -0500
 writeup: true
-permalink: /write-ups/cool-lampppost/
+permalink: /write-ups/cool-lamppost/
 order: 7
 ---
 
