@@ -1,17 +1,17 @@
-name: snowbird91 (Andrew)
+name: .butteredtoast (Omar)
 dp: /assets/icons/pfp.png
 description: "
   <p>
-    Hey! I'm Andrew, a Capture the Flag enthusiast. I compete with <a href='https://ctftime.org/team/53812' target='_blank'>tjcsc</a> and <a href='https://0xf1.sh' target='_blank'>0xf1sh</a>, focusing on forensics, cryptography, and OSINT (plus rev, pwn, web, and misc when needed).
+    Hey! I'm Omar, and this is my first year doing CTFs. I compete with <a href='https://ctftime.org/team/53812' target='_blank'>tjcsc</a>, and I'm mainly trying to learn web and forensics.
   </p>
 "
-discord_id: "633303069550968832"
+discord_id: "709180694995402793"
 quote:
-  text: "There is no greater weapon than a prepared mind."
-  author: "Zhuge Liang"
+  text: "Be who you are and say what you feel, for those who mind don't matter, and those who matter don't mind."
+  author: "Unknown"
 email: ""
 contact:
   - title: discord
-    url: https://discord.com/users/633303069550968832
+    url: https://discord.com/users/709180694995402793
   - title: github
-    url: https://github.com/snowbird91
+    url: https://github.com/Karmaticow
