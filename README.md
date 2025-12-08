@@ -1,6 +1,6 @@
-# snowbird91 CTF Hub
+# .butteredtoast CTF Hub
 
-Personal Jekyll site for my security projects, CTF write-ups, and notes. The design is a neon, hacker-inspired skin on top of the Serial Programmer theme, with dark/light modes and accent neon highlights.
+Jekyll site for security projects, CTF write-ups, and notes. The design is a recolor of snowbird's.
 
 ## Structure
 
