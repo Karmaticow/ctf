@@ -103,7 +103,15 @@ if __name__ == '__main__':
 Firstly, there's a pretty obvious basic SQLi vulnerability right here:
 ``    cur.execute("SELECT COUNT(*) FROM fish WHERE username = '" + username + "' AND password ='" + password +"';") ``
 
-Inputting ``' OR 1=1--`` gets us through the login page. Then, we're presented with an "administration pane:"
+Using quotation marks, we can escape the username field and modify the SQL query.
+The condition 1=1 always evaluates to true, and we can use "--" to comment out the rest of the query.
+
+So, inputting something like ``' OR 1=1--`` will result in the SQL query:
+``SELECT COUNT(*) FROM fish where username = '' OR 1=1--" + username + "' AND password ='" + password +"';")
+
+This query will always evaluate to true, so inputting ``' OR 1=1--`` gets us through the login page.
+
+Then, we're presented with an "administration pane:"
 ![Administration pane](./fishadmin.png)
 
 We can see in ``fishsite.py`` that there is a list of disallowed words that we cannot use in our SQL injection:
