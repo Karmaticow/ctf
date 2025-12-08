@@ -107,7 +107,7 @@ Using quotation marks, we can escape the username field and modify the SQL query
 The condition 1=1 always evaluates to true, and we can use "--" to comment out the rest of the query.
 
 So, inputting something like ``' OR 1=1--`` will result in the SQL query:
-``SELECT COUNT(*) FROM fish where username = '' OR 1=1--" + username + "' AND password ='" + password +"';")
+``SELECT COUNT(*) FROM fish where username = '' OR 1=1--" + username + "' AND password ='" + password +"';")``
 
 This query will always evaluate to true, so inputting ``' OR 1=1--`` gets us through the login page.
 
