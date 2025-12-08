@@ -1,14 +1,14 @@
-title: snowbird91
+title: .butteredtoast
 description: >
-  Andrew (snowbird91) | tjcsc & 0xf1sh | forensics, crypto, OSINT write-ups.
-url: https://snowbird91.github.io
+  Omar (.butteredtoast) | tjcsc | web writeups (the ones i understand)
+url: https://karmaticow.github.io
 baseurl: "/ctf"
 markdown: kramdown
 kramdown:
   input: GFM
 
 author:
-  name: "snowbird91 (Andrew)"
+  name: ".butteredtoast (Omar)"
   email: ""
 
 plugins:
