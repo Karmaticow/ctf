@@ -10,7 +10,7 @@ show_bio: false
 I totally copied this website from **[snowbird91](https://github.com/snowbird91)**
 Check him out! He is much better than I am at most things I'm good at.
 
-I'm a student interested in cybersecurity and CP. In CTFs, mainly compete for **[tjcsc](https://ctftime.org/team/53812)**
+I'm a student interested in cybersecurity and competitive programming. In CTFs, mainly compete for **[tjcsc](https://ctftime.org/team/53812)**
 
 ### Focus areas
 - Web, forensics
