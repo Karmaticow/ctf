@@ -198,9 +198,10 @@ Therefore, ``buf`` must start at ``[rbp-x50]``, which is ``rbp - 80``.
 Contrary to what we thought before, ``hp`` and ``lvl`` are actually lower down than ``buf``!
 
 I did research as to how in the world that's the case, and this is what I found:
-"GCC allocates local variables in a function frame in the order it decides is most efficient without regard to the order they are declared in the source code."
 
-[Source](https://gcc.gnu.org/onlinedocs/gcc/Code-Gen-Options.html)
+"The order of allocation of bit-fields within a unit (high-order to low-order or low-order to high-order) is implementation-defined. The alignment of the addressable storage unit is unspecified."
+
+[ISO C Standard (C99)](https://www.dii.uchile.cl/~daespino/files/Iso_C_1999_definition.pdf)
 
 Anyway, this means we can overflow ``hp`` and ``lvl`` from ``buf``.
 
@@ -270,7 +271,8 @@ r = p.recvall(timeout=2).decode()
 print(r)
 ```
 
-<del>obviouslychoosesparkforstab</del> It doesn't matter which attack you choose, because either way, you get the output:
+<del>obviouslychoosesparkforstab</del>
+It doesn't matter which attack you choose, because either way, you get the output:
 ```
  (t)ackle or (s)park
 Piplup uses Bubble Beam!
