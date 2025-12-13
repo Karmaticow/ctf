@@ -5,7 +5,7 @@ categories: [rev, WinterCTF2025]
 date: 2025-12-12 90:00:00 -0500
 writeup: true
 permalink: /write-ups/glacier/
-order: 2
+order: 3
 ---
 
 **WinterCTF 2025**
