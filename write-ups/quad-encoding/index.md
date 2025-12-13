@@ -181,11 +181,11 @@ Here's a brief explanation for each:
 - ``is_binary`` checks if the split data only has `0`s and `1`s.
 - ``is_b64`` checks if the data contains characters outside of hex range.
 
-**Note:** I put the decoding method in the checker methods as a sanity check.
+**Note:** I put decoding methods in the checker methods as sanity checks.
 
 Now, we can use these methods to repeatedly decode the encoded text.
 
-I used a series of if statements. Here's the full code:
+I used a series of if-statements. Here's the full code:
 ```
 import zlib
 import base64
