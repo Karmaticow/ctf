@@ -21,7 +21,7 @@ I participated on my own in this CTF and got 1st place!
 We're given chall.zip and the link ``https://forger.challenge.tjcsec.club/``
 
 Visiting the link, we see what may be the most simplistic login panel ever:
-![Forger Login Panel](./forgerlogin.png)
+![Forger Login Panel](./forgerlogin2.png)
 
 Extracting the .zip file gives us app.py:
 ```
