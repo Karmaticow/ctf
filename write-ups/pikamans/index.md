@@ -197,8 +197,9 @@ Therefore, ``buf`` must start at ``[rbp-x50]``, which is ``rbp - 80``.
 
 Contrary to what we thought before, ``hp`` and ``lvl`` are actually lower down than ``buf``!
 
-I did some research as to how in the world that happened, and this is what I found from GCC Manual:
+I did research as to how in the world that's the case, and this is what I found:
 "GCC allocates local variables in a function frame in the order it decides is most efficient without regard to the order they are declared in the source code."
+
 [Source](https://gcc.gnu.org/onlinedocs/gcc/Code-Gen-Options.html)
 
 Anyway, this means we can overflow ``hp`` and ``lvl`` from ``buf``.
