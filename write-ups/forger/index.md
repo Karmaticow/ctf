@@ -90,13 +90,15 @@ if __name__ == "__main__":
 ```
 
 To get the flag, you must visit /dashboard with the admin role.
+Visiting /dashboard normally stops us:
+![/dashboard request denied](./forgerdenied.png)
 
-No, inputting "admin" and "password" didn't work.
-This likely because of our session cookie, which you can see via BurpSuite:
+And no, inputting "admin" and "password" didn't work.
+This is probably because of our session cookie, which you can see via BurpSuite:
 ![/dashboard request intercepted in BurpSuite](./forgerburp.png)
 
 Also present in the decompilation was a .git directory.
-I've done a challenge with a git repository before, so I had some prior experience with this.
+I've done a challenge with a git repository before, so I had some prior experience.
 Running ``git show *`` shows the following commit:
 ```
 commit 1a205131c531361d38ed17d356066c29af6bc87d (HEAD -> master)
@@ -127,7 +129,7 @@ The Flask ``SECRET_KEY`` is used to sign session cookies, so now that we have it
 A quick Google search gives us the information we need:
 ![Signing a session cookie with flask-unsign](./forgersearch1.png)
 
-After installing flask-unsign and reading some documentation, I figured out the format for signing cookies with the SECRET_KEY was:
+After installing flask-unsign and reading some documentation, I figured out the format for signing cookies with a SECRET_KEY:
 ``flask-unsign --sign --cookie "{'variable': 'value'}" --secret 'secret'``
 
 So, I ran the command:
@@ -137,7 +139,7 @@ This yielded the forged session cookie ``eyJyb2xlIjoiYWRtaW4ifQ.aTnQig.AmTDf2ovH
 Since this is signed with the SECRET_KEY, it should pass validation!
 
 We can now replace our cookie with the forged cookie in our GET request.
-I used Burp for this, but you can probably use curl too:
+I used BurpSuite for this, but you can probably use curl too:
 ![Using a forged session cookie in GET request](./forgerburprequest.png)
 
 It worked! Using the forged admin session cookie printed the flag:
