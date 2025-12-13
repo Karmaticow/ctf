@@ -25,24 +25,24 @@ When it finally finished, I was presented with a whole lot of nothing.
 
 After digging around in Ghidra for a while, I realized that *maybe* this isn't what you're meant to do.
 So I did a Google search:
-![File types for applications/binaries](./contemplation.png)
+![File types for applications/binaries](./glaciersearch1.png)
 
 Hmmm...
 Well, it's not a .exe, or a .dll, and we already tried handling it like an ELF by decompiling it.
 It's also probably not a Mach-O or a Java file.
 
 However, .NET looks interesting. Let's do another quick search.
-![Tell if a file is .NET by strings](./thought.png)
+![Tell if a file is .NET by strings](./glaciersearch2.png)
 
 Ok, seems straightforward enough. I ran the command:
 ``strings glacier_sled_ride > glacierstrings.txt``
 
 And grepped it for one of the strings I found in the Google search:
-![Grep for "mscoree.dll"](./ponderance.png)
+![Grep for "mscoree.dll"](./glacierstrings1.png)
 
 That's promising, but it could still be something else.
 Let's try something more specific:
-![Grep for "This program cannot be run in DOS mode."](./rumination.png)
+![Grep for "This program cannot be run in DOS mode."](./glacierstrings2.png)
 
 Ok, that confirms it. This file is a .NET application.
 
