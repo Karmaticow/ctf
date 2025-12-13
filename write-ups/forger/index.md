@@ -91,6 +91,7 @@ if __name__ == "__main__":
 
 To get the flag, you must visit /dashboard with the admin role.
 Visiting /dashboard normally stops us:
+
 ![/dashboard request denied](./forgerdenied.png)
 
 And no, inputting "admin" and "password" didn't work.
