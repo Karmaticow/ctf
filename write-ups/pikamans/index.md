@@ -203,6 +203,8 @@ I did research as to how in the world that's the case, and this is what I found:
 
 [ISO C Standard (C99)](https://www.dii.uchile.cl/~daespino/files/Iso_C_1999_definition.pdf)
 
+Translated into common-speak, this means the compiler can reorder variables however it wants for efficiency.
+
 Anyway, this means we can overflow ``hp`` and ``lvl`` from ``buf``.
 
 Let's check if there are any canaries by checking symbols for ``stack_chk``:
