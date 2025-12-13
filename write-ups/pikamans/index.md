@@ -5,7 +5,7 @@ categories: [pwn, WinterCTF2025]
 date: 2025-12-12 90:00:00 -0500
 writeup: true
 permalink: /write-ups/pikamans/
-order: 1
+order: 2
 ---
 
 **WinterCTF 2025**
