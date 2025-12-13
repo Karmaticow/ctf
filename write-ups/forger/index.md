@@ -89,8 +89,7 @@ if __name__ == "__main__":
     app.run("0.0.0.0", 5000, debug=True)
 ```
 
-To get the flag, you must visit /dashboard with the admin role.
-Visiting /dashboard normally stops us:
+To get the flag, you must visit /dashboard with the admin role. Visiting /dashboard normally stops us:
 ![/dashboard request denied](./forgerdenied2.png)
 
 And no, inputting "admin" and "password" didn't work.
