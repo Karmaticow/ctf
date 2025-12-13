@@ -5,7 +5,7 @@ categories: [web, VuwCTF2025]
 date: 2025-12-6 90:00:00 -0500
 writeup: true
 permalink: /write-ups/fishsite/
-order: 2
+order: 1
 ---
 
 **VuwCTF 2025**
