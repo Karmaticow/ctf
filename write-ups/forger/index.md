@@ -100,6 +100,7 @@ This is probably because of our session cookie, which you can see via BurpSuite:
 
 Also present in the decompilation was a .git directory.
 I've done a challenge with a git repository before, so I had some prior experience.
+
 Running ``git show *`` shows the following commit:
 ```
 commit 1a205131c531361d38ed17d356066c29af6bc87d (HEAD -> master)
@@ -137,6 +138,7 @@ So, I ran the command:
 ``flask-unsign --sign --cookie "{'role': 'admin'}" --secret 'super_secret_flask_key_676767'``
 
 This yielded the forged session cookie ``eyJyb2xlIjoiYWRtaW4ifQ.aTnQig.AmTDf2ovHBrEtr3xotUjr3LokkA``.
+
 Since this is signed with the SECRET_KEY, it should pass validation!
 
 We can now replace our cookie with the forged cookie in our GET request.
