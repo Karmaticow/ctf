@@ -23,12 +23,12 @@ We are given ``encoded.txt``, a very long .txt file that I will spare you from.
 The description is important for this challenge:
 "had a little fun encoding using <u>four different methods...</u>"
 
-Ok, now we know that whatever was done with ``encoded.txt`` only used four unique encryption methods.
+Ok, now we know that whatever was done with ``encoded.txt`` only used four unique encoding methods.
 
-Something that's immediately obvious is at the end of ``encoded.txt``:
+Immediately, I found a sign of Base64 encoding at the end of ``encoded.txt``:
 ![Sign of B64](./firstquad.png)
 
-That `=` is a sign of Base 64 encoding.
+That `=` is a sign of Base64 encoding.
 
 Let's decode it using this command:
 ```
@@ -52,14 +52,14 @@ cat encoded1.txt | zlib-flate -uncompress | tail -c 100
 Uk5NVTU2U1RKYVJFcHBUakpGZVZwcVl6Uk9hbGt3VFdwS2JVMTZaekpPYWswd1RYcEZNRnBVWkdoT2Vsa3hUVlJPYTAweVVUMD0=
 ```
 
-That looks like Base 64 again, so let's decode it... again...
+That looks like Base64 again, so let's decode it... again...
 ```
 base64 -d encoded2.txt > encoded3.txt
 tail -c 100 encoded3.txt
 VTFOVE15TlRFMU5qTTBOek0zWVRNMU56STJaREppTjJFeVpqYzROalkwTWpKbU16ZzJOak0wTXpFMFpUZGhOelkxTVROa00yUT0=
 ```
 
-Even more base 64... once more!!
+Even more Base64... once more!!
 ```
 base64 -d encoded3.txt > encoded4.txt
 tail -c 100 encoded4.txt
@@ -112,9 +112,11 @@ Or I could realize that we have our four encoding methods:
 3. Hex
 4. Binary
 
-Also, this is notably a **rev** challenge.
+Knowing this, I typed up a script to automatically decode ``encoded.txt``.
 
-In the script I used, I wrote multiple methods to check what the next layer could be, as well as a binary decoding method.
+Also, this is notably a **rev** challenge, which means we're probably not supposed to do this manually.
+
+I wrote multiple methods to check what the next layer could be, as well as a binary decoding method.
 
 Here they are:
 ```
@@ -175,7 +177,7 @@ def is_b64(data):
 ```
 
 Here's a brief explanation for each:
-- ``decode_binary`` splits the data and evaluates each part as binary.
+- ``decode_binary`` splits the data into parts and evaluates each part as binary.
 - ``is_zlib`` checks if the first byte is the magic byte of a zlib compression.
 - ``is_hex`` checks if characters are ``0-9a-f`` and that the file is even in length.
 - ``is_binary`` checks if the split data only has `0`s and `1`s.
