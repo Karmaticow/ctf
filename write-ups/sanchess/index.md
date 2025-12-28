@@ -21,6 +21,8 @@ I participated with tjcsc in this CTF and we got 17th place!
 We're given a URL, ``http://65.109.194.105:9090/``.
 We also know that the flag is in ``flag.txt``.
 
+## initial exploration
+
 First, let's visit the URL:
 ![visiting the url](sanchessapp.png)
 
@@ -91,7 +93,8 @@ This gives us the expected output:
 }
 ```
 
-Now let's try a conditional input:
+Now let's try a conditional input.
+If the condition evaluates true, Rick moves down to row 6. Otherwise he moves up to row 4. Later, this gives us a boolean oracle.
 ```
 curl -X POST http://65.109.194.105:9090/simulate \
   -H "Content-Type: application/json" \
@@ -198,6 +201,8 @@ Response:
 
 That went through too!
 
+## file read via object traversal
+
 Ok, now we know that the backend is using ``eval()`` and accepts more ops than the frontend sends.
 Critically, ``eval()`` allows the execution of arbitrary Python expressions, so we might be able to use it to read the flag file!
 
@@ -218,7 +223,9 @@ Response:
 
 ...Maybe open is filtered somehow. Let's try using something else.
 
-We could try FileLoader, which we can get by listing the subclasses of Object:
+Since Python objects expose their class and base types, which eventually link back to builtins, we can access __import__ without calling it directly.
+
+FileLoader lets us read arbitrary files via ``get_data``, making it perfect for exfiltrating ``flag.txt``:
 ```
 curl -X POST http://65.109.194.105:9090/simulate \
   -H "Content-Type: application/json" \
@@ -241,6 +248,8 @@ Response:
 ```
 
 That worked! We successfully read the flag file, but all the outputs we have access to are "True" or "False..."
+
+## extracting the flag
 
 Maybe we can check individual indexes?
 We know the flag format is ASIS{...}, so let's check for A:
@@ -312,3 +321,6 @@ for i in range(50):
 
 Using this, we get the final output:
 ``ASIS{7h!nk_0u7_OF_7h3_B0X_r!cK}``
+
+## takeaway
+Moral of the story: Don't always trust frontend constraints!
