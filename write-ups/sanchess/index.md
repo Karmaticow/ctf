@@ -214,7 +214,7 @@ Response:
 }
 ```
 
-![Nervous gulp](gulp.gif)
+![Nervous gulp](https://tenor.com/b1pnZ.gif)
 
 ...Maybe open is filtered somehow. Let's try using something else.
 
